@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Health</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .cta-buttons button {
+            padding: 8px 12px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+        .signin {
+            background-color: rgba(255, 158, 1, 0.854);
+            color: white;
+            border: 1px solid black;
+        }
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #fdf2e8;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 30px;
+        }
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 20px;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: url(https://hips.hearstapps.com/hmg-prod/images/oud1-65d796f561572.jpg?crop=1.00xw:0.373xh;0,0.251xh&resize=1200:*) no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-text {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 40px;
+        }
+        .section {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .main-article, .side-articles {
+            display: flex;
+        }
+        .main-article img, .side-articles img {
+            width: 100%;
+            height: auto;
+        }
+        .main-article {
+            flex: 2;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        .side-articles {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 200px;
+        }
+        .article {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; 
+        }
+        .article-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .article-title a {
+            text-decoration: none;
+            color: black;
+        }
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+            }
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .content {
+                flex-direction: column;
+                margin: 20px;
+            }
+            .main-article, .side-articles {
+                flex-direction: column;
+            }
+            .main-article {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="mySidebar" class="sidebar" aria-label="Sidebar Navigation">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close Sidebar">&times;</a>
+        <a href="About.html">About FitFocus</a>
+        <a href="Food.html">Food</a>
+        <a href="#">My Bookmarks</a>
+        <a href="#">Beauty</a>
+        <a href="#">Sports & Athletes</a>
+    </div>
+
+    <header class="header" aria-label="Main Navigation">
+        <button class="openbtn" onclick="openNav()" aria-label="Open Sidebar">&#9776;</button>
+        <div class="logo">FitFocus</div>
+        <nav class="nav">
+            <a href="home.html">Home</a>
+            <a href="health.html">Health</a>
+            <a href="Fitness.html">Fitness</a>
+            <a href="Life.html">Life</a>
+            <a href="Musics.html">Musics</a>
+            <a href="Motivation.html">Motivation</a>
+        </nav>
+        <div class="cta-buttons">
+            <button class="account" onclick="window.location.href='account.php'">My Account</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>HEALTH</h1>
+            <p>Your body is a machine. Here’s how to take care of every part of it.</p>
+        </div>
+    </section>
+
+    <main class="content">
+        <section class="section">
+            <div class="section-title">General</div>
+            <div class="main-article">
+                <div class="article">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/heart-health-illustration-web-by-ryan-olbrysh-square-652ef295c4ec4.png?crop=1.00xw:0.668xh;0,0.166xh&resize=1000:*" alt="Main Article Image">
+                    <div class="article-title"><a href="General1.html">This Heart Attack Targets Young, Active Women And Doctors Don’t Really Know Why</a></div>
+                </div>
+            </div>
+            <div class="side-articles">
+                <div class="article">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/tru3295817-664234533793e.jpg?crop=0.680xw:0.775xh;0.160xw,0.0988xh&resize=1200:*" alt="Side Article Image">
+                    <div class="article-title"><a href="General2.html">Young People's Bodies Are Aging Faster Than Ever</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">Mental Health</div>
+            <div class="main-article">
+                <div class="article">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/feet-of-male-hiker-hiking-along-log-footpath-royalty-free-image-948659156-1548797397.jpg?crop=1xw:0.75035xh;center,top&resize=1000:*" alt="Main Article Image">
+                    <div class="article-title"><a href="General3.html">15 Ways to Lower Your Blood Pressure Naturally</a></div>
+                </div>
+            </div>
+            <div class="side-articles">
+                <div class="article">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/paper-head-with-chaos-brains-royalty-free-image-1679679840.jpg?crop=1.00xw:0.667xh;0,0.163xh&resize=1200:*" alt="Side Article Image">
+                    <div class="article-title"><a href="General4.html">What Are Intrusive Thoughts—And Is It Normal To Have Them?</a></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+</body>
+</html>

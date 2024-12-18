@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Health</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .cta-buttons button {
+            padding: 8px 12px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+        .signin {
+            background-color: rgba(255, 158, 1, 0.854);
+            color: white;
+            border: 1px solid black;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+        .hero-text {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #fdf2e8;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 30px;
+        }
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 20px;
+        }
+        .notification {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .notification-body {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+        .notification-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .notification-buttons button {
+            padding: 8px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .btn-primary {
+            background-color: #e88048;
+            color: white;
+        }
+        .btn-secondary {
+            background-color: #f8f9fa;
+            color: #333;
+            border: 1px solid #ccc;
+        }
+        .account{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="About.html">About FitFocus</a>
+        <a href="Food.html">Food</a>
+        <a href="#">My Bookmarks</a>
+        <a href="#">Beauty</a>
+        <a href="#">Sports & Athletes</a>
+    </div>
+
+    <header class="header">
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
+        <div class="logo">FitFocus</div>
+        <nav class="nav">
+            <a href="massindex.html">BMI Calculator</a>
+            <a href="health.html">Health</a>
+            <a href="Fitness.html">Fitness</a>
+            <a href="Life.html">Life</a>
+            <a href="Musics.html">Musics</a>
+            <a href="Motivation.html">Motivation</a>
+        </nav>
+        <div class="cta-buttons">
+            <button class="account" onclick="window.location.href='account.php'">My Account</button>
+        </div>
+    </header>
+    
+    <div class="hero">
+        <img src="https://hips.hearstapps.com/hmg-prod/images/0225zm-01153ma-6601cceac4fa8.png?crop=1.00xw:0.864xh;0,0&resize=2048:*" alt="portrait of young woman, studio background">
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+</body>
+</html>

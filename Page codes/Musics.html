@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .header {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .cta-buttons button {
+            padding: 8px 12px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+        .signin {
+            background-color: rgba(255, 158, 1, 0.854);
+            color: white;
+            border: 1px solid black;
+        }
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #fdf2e8;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 30px;
+        }
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 20px;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: url(https://images.pexels.com/photos/3768113/pexels-photo-3768113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-text {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 40px;
+        }
+        .section {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .article {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; 
+        }
+        .article-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .article-title a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+        .article-title a:hover {
+            text-decoration: underline;
+        }
+        .song-list {
+            display: none;
+            margin-top: 10px;
+            list-style-type: none;
+            padding: 0;
+        }
+        .song-list li {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+            }
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .content {
+                flex-direction: column;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="mySidebar" class="sidebar" aria-label="Sidebar Navigation">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close Sidebar">&times;</a>
+        <a href="About.html">About FitFocus</a>
+        <a href="Food.html">Food</a>
+        <a href="#">My Bookmarks</a>
+        <a href="#">Beauty</a>
+        <a href="#">Sports & Athletes</a>
+    </div>
+
+    <header class="header" aria-label="Main Navigation">
+        <button class="openbtn" onclick="openNav()" aria-label="Open Sidebar">&#9776;</button>
+        <div class="logo">FitFocus</div>
+        <nav class="nav">
+            <a href="home.html">Home</a>
+            <a href="health.html">Health</a>
+            <a href="Fitness.html">Fitness</a>
+            <a href="Life.html">Life</a>
+            <a href="Musics.html">Musics</a>
+            <a href="Motivation.html">Motivation</a>
+        </nav>
+        <div class="cta-buttons">
+            <button class="account" onclick="window.location.href='account.php'">My Account</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Music</h1>
+            <p>Enhance your workouts with our curated music playlists that keep you motivated and energized.</p>
+        </div>
+    </section>
+
+    <main class="content">
+        <section class="section">
+            <div class="section-title">Workout Playlists</div>
+            <div class="article">
+                <p>Check out our latest high-energy workout playlist to keep you pumped throughout your session.</p>
+                <div class="article-title">
+                    <a href="javascript:void(0)" onclick="toggleSongs('high-energy-songs')">High-Energy Playlist</a>
+                </div>
+                <ul id="high-energy-songs" class="song-list">
+                    <li><a href="http://localhost/PROJECT/src/the-black-eyed-peas-pump-it.mp3" target="_blank">The Black Eyed Peas - Pump It</a></li>
+                    <li>Nirvana - Smells Like Teen Spirit</li>
+                    <li>AC/DC - Thunderstruck</li>
+                    <li>Survivor - Eye Of The Tiger</li>
+                </ul>
+            </div>
+            <div class="article">
+                <p>Need something more mellow? Our cool-down playlist is perfect for winding down after a hard workout.</p>
+                <div class="article-title">
+                    <a href="javascript:void(0)" onclick="toggleSongs('cool-down-songs')">Cool-Down Playlist</a>
+                </div>
+                <ul id="cool-down-songs" class="song-list">
+                    <li>Harry Styles - Sweet Creature</li>
+                    <li>One Direction - Temporary Fix</li>
+                    <li>Avicii - Wake Me Up</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">Featured Artists</div>
+            <div class="article">
+                <p>Learn more about the artists behind your favorite workout tracks.</p>
+                <div class="article-title">
+                    <a href="javascript:void(0)" onclick="toggleSongs('dj-fit-songs')">Artist Spotlight: DJ Fit</a>
+                </div>
+                <ul id="dj-fit-songs" class="song-list">
+                    <li>DJ Ice - Memories</li>
+                    <li>Madinga - Don't Be So Shy</li>
+                </ul>
+            </div>
+            <div class="article">
+                <p>Discover new artists who are making waves in the fitness music scene.</p>
+                <div class="article-title">
+                    <a href="artist2.html">Up-and-Coming: BeatMasters</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+
+        function toggleSongs(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
